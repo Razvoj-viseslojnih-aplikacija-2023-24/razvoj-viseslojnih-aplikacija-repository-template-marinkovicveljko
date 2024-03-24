@@ -50,4 +50,9 @@ public class KorisnikUslugeServiceImpl implements KorisnikUslugeService {
 		return repo.findByMaticniBrojContainingIgnoreCase(maticniBroj);
 	}
 
+	@Override
+	public Optional<KorisnikUsluge> findById(int id) {
+		return repo.findById(id);
+	}
+
 }

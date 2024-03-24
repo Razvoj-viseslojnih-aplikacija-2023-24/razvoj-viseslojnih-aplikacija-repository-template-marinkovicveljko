@@ -50,4 +50,9 @@ public class BankaServiceImpl implements BankaService {
 		return repo.findByNazivContainingIgnoreCase(naziv);
 	}
 
+	@Override
+	public Optional<Banka> findById(int id) {
+		return repo.findById(id);
+	}
+
 }

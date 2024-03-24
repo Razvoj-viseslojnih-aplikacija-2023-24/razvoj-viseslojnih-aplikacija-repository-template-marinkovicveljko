@@ -62,4 +62,9 @@ public class UslugaServiceImpl implements UslugaService {
 		return repo.findByKorisnikUsluge(korisnik);
 	}
 
+	@Override
+	public Optional<Usluga> findById(int id) {
+		return repo.findById(id);
+	}
+
 }

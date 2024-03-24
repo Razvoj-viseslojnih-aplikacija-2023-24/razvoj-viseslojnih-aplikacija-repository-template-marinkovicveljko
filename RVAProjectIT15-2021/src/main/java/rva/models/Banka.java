@@ -3,6 +3,9 @@ package rva.models;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +27,8 @@ private String naziv;
 private String kontakt;
 private int pib;
 
-@OneToMany(mappedBy = "banka")
+@OneToMany(mappedBy = "banka", cascade = CascadeType.REMOVE)
+@JsonIgnore
 private List<Filijala> filijale;
 
 
@@ -70,6 +74,19 @@ public int getPib() {
 public void setPib(int pib) {
 	this.pib = pib;
 }
+
+public List<Filijala> getFilijale() {
+	return filijale;
+}
+
+public void setFilijale(List<Filijala> filijale) {
+	this.filijale = filijale;
+}
+
+public static long getSerialversionuid() {
+	return serialVersionUID;
+}
+
 
 
 

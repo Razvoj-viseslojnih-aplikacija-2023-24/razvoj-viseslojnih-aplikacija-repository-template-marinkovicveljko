@@ -10,5 +10,6 @@ import rva.models.Banka;
 @Repository
 public interface BankaRepository extends JpaRepository<Banka, Integer> {
 
-	List<Banka> findByNazivContainingIgnoreCase (String naziv);
+	List<Banka> findByNazivContainingIgnoreCase(String naziv);
 }
+

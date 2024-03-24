@@ -86,5 +86,26 @@ public class Usluga implements Serializable {
 	public void setProvizija(double provizija) {
 		this.provizija = provizija;
 	}
+
+	public Filijala getFilijala() {
+		return filijala;
+	}
+
+	public void setFilijala(Filijala filijala) {
+		this.filijala = filijala;
+	}
+
+	public KorisnikUsluge getKorisnik() {
+		return korisnik;
+	}
+
+	public void setKorisnik(KorisnikUsluge korisnik) {
+		this.korisnik = korisnik;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 }

@@ -56,4 +56,9 @@ public class FilijalaServiceImpl implements FilijalaService {
 		return repo.findByBanka(banka);
 	}
 
+	@Override
+	public Optional<Filijala> findById(int id) {
+		return repo.findById(id);
+	}
+
 }
