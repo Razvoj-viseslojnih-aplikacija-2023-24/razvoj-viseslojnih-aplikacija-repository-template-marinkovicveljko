@@ -95,7 +95,7 @@ if(service.existsById(usluga.getId())) {
 return ResponseEntity.status(409).body("Resources already exists!");
 }
 Usluga savedUsluga = service.create(usluga);
-URI uri = URI.create("usluga/id/" + savedUsluga.getId());
+URI uri = URI.create("/usluga/id/" + savedUsluga.getId());
 return ResponseEntity.created(uri).body(savedUsluga);
 }
 

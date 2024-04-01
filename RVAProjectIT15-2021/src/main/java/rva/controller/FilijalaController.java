@@ -79,7 +79,7 @@ if(service.existsById(filijala.getId())) {
 return ResponseEntity.status(409).body("Resources already exists!");
 }
 Filijala savedFilijala = service.create(filijala);
-URI uri = URI.create("filijala/id/" + savedFilijala.getId());
+URI uri = URI.create("/filijala/id/" + savedFilijala.getId());
 return ResponseEntity.created(uri).body(savedFilijala);
 }
 

@@ -54,7 +54,7 @@ if(service.existsById(korisnikUsluge.getId())) {
 return ResponseEntity.status(409).body("Resources already exists!");
 }
 KorisnikUsluge savedKorisnikUsluge = service.create(korisnikUsluge);
-URI uri = URI.create("korisnikUsluge/id/" + savedKorisnikUsluge.getId());
+URI uri = URI.create("/korisnikUsluge/id/" + savedKorisnikUsluge.getId());
 return ResponseEntity.created(uri).body(savedKorisnikUsluge);
 }
 

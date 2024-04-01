@@ -11,29 +11,30 @@ import rva.models.KorisnikUsluge;
 import rva.models.Usluga;
 import rva.repository.UslugaRepository;
 import rva.services.UslugaService;
+import java.lang.Override;
 
 @Component
 public class UslugaServiceImpl implements UslugaService {
 
 	@Autowired
 	private UslugaRepository repo;
-	
+    
 	@Override
 	public List<Usluga> getAll() {
 		return repo.findAll();
 	}
 
-	@Override
+    @Override
 	public boolean existsById(int id) {
 		return existsById(id);
 	}
 
-	@Override
+    @Override
 	public Usluga create(Usluga t) {
 		return repo.save(t);
 	}
 
-	@Override
+    @Override
 	public Optional<Usluga> update(Usluga t, int id) {
 		if(existsById(id)) {
 			t.setId(id);
@@ -42,27 +43,27 @@ public class UslugaServiceImpl implements UslugaService {
 		return Optional.empty();
 	}
 
-	@Override
+    @Override
 	public void delete(int id) {
 		repo.deleteById(id);
 	}
 
-	@Override
+    @Override
 	public List<Usluga> getUslugaByNaziv(String naziv) {
 		return repo.findByNaziv(naziv);
 	}
 
-	@Override
+    @Override
 	public List<Usluga> getByForeignKey(Filijala filijala) {
 		return repo.findByFilijala(filijala);
 	}
 
-	@Override
+    @Override
 	public List<Usluga> getByForeignKey(KorisnikUsluge korisnik) {
 		return repo.findByKorisnikUsluge(korisnik);
 	}
 
-	@Override
+   @Override
 	public Optional<Usluga> findById(int id) {
 		return repo.findById(id);
 	}

@@ -39,12 +39,14 @@ public class Usluga implements Serializable {
 		
 	}
 	
-	public Usluga(int id, String naziv, String opisUsluge, Date datumUgovora, double provizija) {
+	public Usluga(int id, String naziv, String opisUsluge, Date datumUgovora, double provizija, Filijala filijala, KorisnikUsluge korisnik) {
 		this.id=id;
 		this.naziv=naziv;
 		this.opisUsluge=opisUsluge;
 		this.datumUgovora=datumUgovora;
 		this.provizija=provizija;
+		this.filijala=filijala;
+		this.korisnik=korisnik;
 	}
 
 	public int getId() {
