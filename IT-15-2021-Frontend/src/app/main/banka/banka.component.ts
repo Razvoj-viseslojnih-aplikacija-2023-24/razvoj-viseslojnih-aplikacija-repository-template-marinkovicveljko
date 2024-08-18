@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
+import { BankaDialogComponent } from 'src/app/dialogs/banka-dialog/banka-dialog.component';
 import { Banka } from 'src/app/models/banka';
 import { BankaService } from 'src/app/services/banka.service';
 
@@ -12,29 +14,42 @@ import { BankaService } from 'src/app/services/banka.service';
 
 export class BankaComponent implements OnInit, OnDestroy {
 
-displayedColumns = ['id', 'naziv', 'kontakt', 'pib', 'actions']
-dataSource!: MatTableDataSource<Banka>;
-subscription!: Subscription;
+  displayedColumns = ['id', 'naziv', 'kontakt', 'pib', 'actions']
+  dataSource!: MatTableDataSource<Banka>;
+  subscription!: Subscription;
 
-constructor(private bankaService: BankaService) { }
+  constructor(private bankaService: BankaService,
+    private dialog: MatDialog) { }
 
-ngOnDestroy(): void {
-  this.subscription.unsubscribe();
-}
-
-ngOnInit(): void {
-this.loadData();
-}
-
-public loadData() {
-this.subscription=this.bankaService.getAllBanks().subscribe(
-  data => {
-   this.dataSource = new MatTableDataSource(data);
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
-),
-(error: Error) => {
-  console.log(error.name + ' ' + error.message);
-}
-}
+
+  ngOnInit(): void {
+    this.loadData();
+  }
+
+  public loadData() {
+    this.subscription = this.bankaService.getAllBanks().subscribe(
+      data => {
+        this.dataSource = new MatTableDataSource(data);
+
+      }
+    ),
+      (error: Error) => {
+        console.log(error.name + ' ' + error.message);
+      }
+  }
+
+  public openDialog(flag: number, id?: number, naziv?: string, kontakt?: string, pib?: number): void {
+    const dialogRef = this.dialog.open(BankaDialogComponent, { data: { id, naziv, kontakt, pib } })
+
+    dialogRef.componentInstance.flag = flag;
+    dialogRef.afterClosed().subscribe(res => {
+      if (res == 1) {
+        this.loadData();
+      }
+    })
+  }
 
 }
