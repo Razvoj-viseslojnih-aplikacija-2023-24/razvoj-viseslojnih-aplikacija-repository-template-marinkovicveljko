@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { KorisniciDialogComponent } from 'src/app/dialogs/korisnici-dialog/korisnici-dialog.component';
 import { Korisnici } from 'src/app/models/korisnici';
 import { KorisniciService } from 'src/app/services/korisnici.service';
+import { UslugaComponent } from '../usluga/usluga.component';
 
 @Component({
   selector: 'app-korisnici',
@@ -12,7 +13,7 @@ import { KorisniciService } from 'src/app/services/korisnici.service';
   styleUrls: ['./korisnici.component.css']
 })
 export class KorisniciComponent implements OnInit, OnDestroy {
-  displayedColumns = ['id', 'ime', 'prezime', 'maticni_broj', 'actions']
+  displayedColumns = ['id', 'ime', 'prezime', 'maticniBroj', 'actions']
   dataSource!: MatTableDataSource<Korisnici>;
   subscription!: Subscription;
 
@@ -39,8 +40,8 @@ export class KorisniciComponent implements OnInit, OnDestroy {
       }
   }
 
-  public openDialog(flag: number, id?: number, ime?: string, prezime?: string, maticni_broj?: number): void {
-    const dialogRef = this.dialog.open(KorisniciDialogComponent, { data: { id, ime, prezime, maticni_broj } })
+  public openDialog(flag: number, id?: number, ime?: string, prezime?: string, maticniBroj?: number): void {
+    const dialogRef = this.dialog.open(KorisniciDialogComponent, { data: { id, ime, prezime, maticniBroj } })
 
     dialogRef.componentInstance.flag = flag;
     dialogRef.afterClosed().subscribe(res => {

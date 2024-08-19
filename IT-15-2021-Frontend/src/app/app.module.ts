@@ -14,6 +14,8 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +32,7 @@ import { UslugaComponent } from './main/usluga/usluga.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BankaDialogComponent } from './dialogs/banka-dialog/banka-dialog.component';
 import { KorisniciDialogComponent } from './dialogs/korisnici-dialog/korisnici-dialog.component';
+import { FilijalaDialogComponent } from './dialogs/filijala-dialog/filijala-dialog.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { KorisniciDialogComponent } from './dialogs/korisnici-dialog/korisnici-d
     AutomobilComponent,
     BankaDialogComponent,
     KorisniciDialogComponent,
+    FilijalaDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,9 @@ import { KorisniciDialogComponent } from './dialogs/korisnici-dialog/korisnici-d
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
