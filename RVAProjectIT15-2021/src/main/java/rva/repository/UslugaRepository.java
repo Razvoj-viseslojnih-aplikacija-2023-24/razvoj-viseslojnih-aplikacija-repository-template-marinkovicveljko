@@ -16,6 +16,6 @@ public interface UslugaRepository extends JpaRepository<Usluga, Integer> {
 	
 	List<Usluga> findByFilijala(Filijala filijala);
 	
-	List<Usluga> findByKorisnikUsluge(KorisnikUsluge korisnik);
+	List<Usluga> findByKorisnik(KorisnikUsluge korisnik);
 
 }

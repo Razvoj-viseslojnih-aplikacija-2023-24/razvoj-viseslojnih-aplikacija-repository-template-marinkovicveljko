@@ -14,5 +14,6 @@ public interface UslugaService extends CrudService<Usluga> {
 	List<Usluga> getUslugaByNaziv(String naziv);
 	
 	List<Usluga> getByForeignKey(Filijala filijala);
+	
 	List<Usluga> getByForeignKey(KorisnikUsluge korisnik);
 }

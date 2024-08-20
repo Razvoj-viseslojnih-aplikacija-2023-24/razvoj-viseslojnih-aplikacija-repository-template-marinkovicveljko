@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -6,6 +6,9 @@ import { KorisniciDialogComponent } from 'src/app/dialogs/korisnici-dialog/koris
 import { Korisnici } from 'src/app/models/korisnici';
 import { KorisniciService } from 'src/app/services/korisnici.service';
 import { UslugaComponent } from '../usluga/usluga.component';
+import { Usluga } from 'src/app/models/usluga';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-korisnici',
@@ -16,6 +19,9 @@ export class KorisniciComponent implements OnInit, OnDestroy {
   displayedColumns = ['id', 'ime', 'prezime', 'maticniBroj', 'actions']
   dataSource!: MatTableDataSource<Korisnici>;
   subscription!: Subscription;
+  selektovanKorisnikParent!: Korisnici
+  @ViewChild(MatSort, {static: false}) sort!: MatSort
+  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator
 
   constructor(private korisniciService: KorisniciService,
     private dialog: MatDialog) { }
@@ -32,7 +38,8 @@ export class KorisniciComponent implements OnInit, OnDestroy {
     this.subscription = this.korisniciService.getAllKorisnici().subscribe(
       data => {
         this.dataSource = new MatTableDataSource(data);
-
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }
     ),
       (error: Error) => {
@@ -49,5 +56,16 @@ export class KorisniciComponent implements OnInit, OnDestroy {
         this.loadData();
       }
     })
+  }
+
+  public selectRow(row: Korisnici) {
+    this.selektovanKorisnikParent = row;
+   }
+
+   public applyFilter(filterValue: any) {
+    filterValue = filterValue.target.value;
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }

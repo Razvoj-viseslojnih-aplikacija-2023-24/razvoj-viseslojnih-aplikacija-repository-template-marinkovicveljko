@@ -1,0 +1,53 @@
+<div class="container">
+    <h3 mat-dialog-title *ngIf="flag == 1">Dodavanje usluge</h3>
+    <h3 mat-dialog-title *ngIf="flag == 2">Ažuriranje stavke porudzbine: {{data.id}}</h3>
+    <h3 mat-dialog-title *ngIf="flag == 3">Brisanje stavke porudzbine: {{data.id}}</h3>
+
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="form">
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Naziv" name="Naziv" [disabled]="flag==3"
+                    [(ngModel)]="data.naziv" required />
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Opis usluge" name="Opis usluge" [disabled]="flag==3" [(ngModel)]="data.opisUsluge"
+                    required />
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Datum ugovora" name="Datum ugovora" [disabled]="flag==3"
+                    [(ngModel)]="data.datumUgovora" required />
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field class="form-field">
+                <input matInput placeholder="Provizija" name="Provizija" [disabled]="flag==3" [(ngModel)]="data.provizija" required />
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-select [compareWith]="compareTo" class="form-field" placeholder="Filijala" name="Filijala"
+                [disabled]="flag==3" [(ngModel)]="data.filijala" required>
+                <mat-option *ngFor="let filijala of filijale" [value]="filijala">
+                    {{filijala.adresa}}
+                </mat-option>
+            </mat-select>
+        </div>
+    </form>
+
+    <div class="form-field mat-dialog-actions">
+        <button mat-raised-button color="accent" *ngIf="flag == 1" type="submit" mat-dialog-close="1"
+            [disabled]="!formControl.valid" (click)="addUsluga()">Sačuvaj</button>
+        <button mat-raised-button color="accent" *ngIf="flag == 2" type="submit" mat-dialog-close="1"
+            [disabled]="!formControl.valid" (click)="updateUsluga()">Modifikuj</button>
+        <button mat-raised-button color="accent" *ngIf="flag == 3" mat-dialog-close="1"
+            (click)="deleteUsluga()">Obriši</button>
+        <button mat-raised-button color="warn" (click)="cancel()">Poništi</button>
+    </div>
+</div>

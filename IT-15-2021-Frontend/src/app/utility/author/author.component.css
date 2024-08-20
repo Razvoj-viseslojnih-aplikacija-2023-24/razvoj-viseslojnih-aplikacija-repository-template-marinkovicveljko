@@ -1,0 +1,97 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #51e2f2; /* Baby roze pozadina */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+}
+
+/* Title Styles */
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    flex-grow: 1;
+    font-size: 24px;
+    color: #333333; /* Tamno siva boja */
+}
+
+.icon {
+    color:  #06384d; /* Svetlo roze boja */
+}
+
+/* Profile Styles */
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Info Styles */
+.info-wrapper {
+    text-align: center;
+}
+
+.name {
+    font-size: 22px;
+    color: #333333; /* Tamno siva boja */
+    margin: 10px 0;
+}
+
+.bio, .contact, .birthdate, .university, .about-me {
+    font-size: 16px;
+    color: #555555; /* Svetlija tamno siva boja */
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio {
+    font-style: italic;
+}
+
+.about-me {
+    margin-top: 15px;
+    text-align: justify; /* Poravnanje teksta */
+}
+
+.social {
+    margin-top: 15px;
+}
+
+.social a:hover {
+    text-decoration: underline;
+}
+
+.social .icon {
+    margin-right: 5px;
+    color: #51e2f2; /* Nežno roze boja */
+}

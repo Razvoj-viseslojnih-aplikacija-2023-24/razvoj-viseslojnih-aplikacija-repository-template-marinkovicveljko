@@ -1,1 +1,19 @@
-<p>home works!</p>
+<mat-toolbar color="primary" class="title-wrapper">
+    <span class="title">Home</span>
+    <mat-icon>home</mat-icon>
+  </mat-toolbar>
+    <div class="box-wrapper">
+      <div class="box">
+        <div class="box-title">Banka</div>
+        <button mat-raised-button class="custom-button" [routerLink]="['/banka']"><mat-icon>open_in_new</mat-icon>Otvori</button>
+      </div>
+      <div class="box">
+        <div class="box-title">Filijala</div>
+        <button mat-raised-button class="custom-button" [routerLink]="['/filijala']"><mat-icon>open_in_new</mat-icon>Otvori</button>
+      </div>
+      <div class="box">
+        <div class="box-title">Korisnik</div>
+        <button mat-raised-button class="custom-button" [routerLink]="['/korisnici']"><mat-icon>open_in_new</mat-icon>Otvori</button>
+      </div>
+    </div>
+ 

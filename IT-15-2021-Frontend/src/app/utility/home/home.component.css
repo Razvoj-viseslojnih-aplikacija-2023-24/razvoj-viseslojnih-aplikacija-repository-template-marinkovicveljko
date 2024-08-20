@@ -1,0 +1,97 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffe6e6; /* Baby roze pozadina */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container Styles */
+  .container {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px; /* Kvadratni oblik */
+    height: auto; /* Automatska visina */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Poravnanje ka gornjoj levoj ivici */
+    margin: 20px;
+  }
+  
+  /* Title Styles */
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px; /* Smanjen padding */
+    gap: 10px;
+    background-color: #f86182; /* Nežno roze boja (ista kao dugmići) */
+    color: #ffffff; /* Bela boja teksta */
+    border-radius: 10px;
+    width: fit-content; /* Širina automatski prema sadržaju */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Dodata senka */
+    margin-bottom: 20px; /* Razmak od box-wrappera */
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #ffffff; /* Bela boja teksta */
+  }
+  
+  .icon {
+    color: #ffffff; /* Bela boja ikone */
+  }
+  
+  /* Box Styles */
+  .box-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .box {
+    width: 80%; /* Veća širina */
+    background-color: #fff0f5; /* Svetlije roze za kutije */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .box-icon {
+    font-size: 24px; /* Smanjena veličina ikone */
+    color: #f86182; /* Svetlo roze boja */
+    margin-bottom: 10px; /* Razmak ispod ikone */
+  }
+  
+  .box-title {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333333; /* Tamno siva boja */
+  }
+  
+  /* Custom Button Styles */
+  .custom-button {
+    background-color: #f86182 !important; /* Svetlo roze boja */
+    color: #ffffff !important; /* Bela boja teksta */
+    margin-top: 10px; /* Razmak iznad dugmeta */
+  }
+  
+  .custom-button:hover {
+    background-color: #ff99aa !important; /* Svetlije roze pri hoveru */
+  }
+  

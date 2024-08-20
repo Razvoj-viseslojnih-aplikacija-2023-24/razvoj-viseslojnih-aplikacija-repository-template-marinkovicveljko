@@ -60,7 +60,7 @@ public class UslugaServiceImpl implements UslugaService {
 
     @Override
 	public List<Usluga> getByForeignKey(KorisnikUsluge korisnik) {
-		return repo.findByKorisnikUsluge(korisnik);
+		return repo.findByKorisnik(korisnik);
 	}
 
    @Override

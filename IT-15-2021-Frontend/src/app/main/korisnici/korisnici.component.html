@@ -3,25 +3,28 @@
   </mat-toolbar>
   
   <div class="container mat-elavation-z8">
-    <mat-table [dataSource]="dataSource" class="mat-cell">
+    <mat-form-field>
+      <input matInput placeholder="Pretraga banke" (keyup)="applyFilter($event)">
+    </mat-form-field>
+    <mat-table matSort [dataSource]="dataSource" class="mat-cell">
       <!--ID-->
       <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
       </ng-container>
       <!--Naziv-->
       <ng-container matColumnDef="ime">
-        <mat-header-cell *matHeaderCellDef>Ime korisnika</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Ime korisnika</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.ime }}</mat-cell>
       </ng-container>
       <!-- Kontakt -->
       <ng-container matColumnDef="prezime">
-        <mat-header-cell *matHeaderCellDef>Prezime korisnika</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Prezime korisnika</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.prezime }}</mat-cell>
       </ng-container>
       <!-- Kontakt -->
       <ng-container matColumnDef="maticniBroj">
-        <mat-header-cell *matHeaderCellDef>Maticni broj</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Maticni broj</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.maticniBroj }}</mat-cell>
       </ng-container>
       <!-- Action Buttons -->
@@ -43,8 +46,14 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row
         style="cursor: pointer;"
-        *matRowDef="let row; columns: displayedColumns">
+        *matRowDef="let row; columns: displayedColumns"
+        (click)="selectRow(row)">
       </mat-row>
     </mat-table>
+    <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
   </div>
-    
+<div class="container-mat-elevation-z8">
+  <app-usluga *ngIf="selektovanKorisnikParent" [selektovanKorisnikChild]="selektovanKorisnikParent"> 
+
+  </app-usluga>
+</div>
