@@ -4,7 +4,7 @@
 
 <div class="container mat-elavation-z8">
     <mat-form-field>
-        <input matInput placeholder="Pretraga banke" (keyup)="applyFilter($event)">
+        <input matInput placeholder="Pretraga usluge" (keyup)="applyFilter($event)">
     </mat-form-field>
     <mat-table matSort #table [dataSource]="dataSource" class="mat-cell">
         <!--ID-->
@@ -25,7 +25,7 @@
         <!-- Datum ugovora -->
         <ng-container matColumnDef="datumUgovora">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Datum ugovora</mat-header-cell>
-            <mat-cell *matCellDef="let row">{{ row.datumUgovora }}</mat-cell>
+            <mat-cell *matCellDef="let row">{{ row.datumUgovora | date: 'dd.MM.yyyy.' }}</mat-cell>
         </ng-container>
         <!-- Provizija -->
         <ng-container matColumnDef="provizija">

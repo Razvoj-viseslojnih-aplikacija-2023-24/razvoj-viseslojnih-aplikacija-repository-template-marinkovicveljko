@@ -20,12 +20,13 @@
                 <input matInput placeholder="PIB" [(ngModel)]="data.pib" name="pib" [disabled]="flag==3" required>
             </mat-form-field>
         </div>
-        <div mat-dialog-actions>
-            <button mat-button (click)="addBanka()" *ngIf="flag == 1" type="submit" [mat-dialog-close]="1"
-                [disabled]="!formControl.valid">Sacuvaj</button>
+        <div mat-dialog-actions style="  display: flex; width: 80%;  justify-content: space-evenly;">
+            <button mat-button (click)="addBanka()" *ngIf="flag == 1"
+                type="submit" [mat-dialog-close]="1" [disabled]="!formControl.valid">Sacuvaj</button>
             <button mat-button (click)="updateBanka()" *ngIf="flag == 2" type="submit" [mat-dialog-close]="1"
                 [disabled]="!formControl.valid">Azuriraj</button>
-            <button mat-button (click)="deleteBanka()" *ngIf="flag == 3" [mat-dialog-close]="1">Obrisi</button>
+            <button mat-button (click)="deleteBanka()" *ngIf="flag == 3"
+                [mat-dialog-close]="1">Obrisi</button>
             <button mat-button (click)="cancel()">Ponisti</button>
 
         </div>

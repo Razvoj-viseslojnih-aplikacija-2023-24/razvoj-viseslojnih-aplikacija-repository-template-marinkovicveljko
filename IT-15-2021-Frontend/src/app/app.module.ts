@@ -36,6 +36,8 @@ import { KorisniciDialogComponent } from './dialogs/korisnici-dialog/korisnici-d
 import { FilijalaDialogComponent } from './dialogs/filijala-dialog/filijala-dialog.component';
 import { UslugaDialogComponent } from './dialogs/usluga-dialog/usluga-dialog.component';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatCheckboxModule,
     MatSelectModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

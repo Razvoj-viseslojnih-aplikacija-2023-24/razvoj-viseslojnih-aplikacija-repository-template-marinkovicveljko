@@ -26,7 +26,7 @@ public class UslugaServiceImpl implements UslugaService {
 
     @Override
 	public boolean existsById(int id) {
-		return existsById(id);
+		return repo.existsById(id);
 	}
 
     @Override

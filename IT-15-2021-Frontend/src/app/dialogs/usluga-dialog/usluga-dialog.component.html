@@ -20,14 +20,16 @@
 
         <div class="form">
             <mat-form-field class="form-field">
-                <input matInput placeholder="Datum ugovora" name="Datum ugovora" [disabled]="flag==3"
-                    [(ngModel)]="data.datumUgovora" required />
+                <input matInput [matDatepicker]="datumUgovora" placeholder="Datum ugovora" name="datumUgovora" [disabled]="flag==3" [(ngModel)]="data.datumUgovora" required/>
+                <mat-datepicker-toggle matSuffix [for]="datumUgovora"></mat-datepicker-toggle>
+                <mat-datepicker #datumUgovora></mat-datepicker>
             </mat-form-field>
         </div>
 
         <div class="form">
             <mat-form-field class="form-field">
                 <input matInput placeholder="Provizija" name="Provizija" [disabled]="flag==3" [(ngModel)]="data.provizija" required />
+                <span matSuffix>RSD</span>
             </mat-form-field>
         </div>
 

@@ -27,7 +27,7 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>Poseduje sef</mat-header-cell>
         <mat-cell *matCellDef="let row" [style.color]="row.posedujeSef == true ? 'green' : 'red'">{{ row.posedujeSef ? 'Da' : 'Ne' }}</mat-cell>
       </ng-container>
-      <!-- Poseduje sef -->
+      <!-- Banka -->
       <ng-container matColumnDef="banka">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Banka</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.banka.naziv }}</mat-cell>

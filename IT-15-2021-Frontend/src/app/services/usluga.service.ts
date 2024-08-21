@@ -24,6 +24,8 @@ export class UslugaService {
   }
 
   public deleteUsluga(id:number) : Observable<any> {
-    return this.httpClient.delete(`${USLUGA_URL}/id/${id}`);
+    return this.httpClient.delete(`${USLUGA_URL}/id/${id}`, {
+      responseType: 'text',
+    });
   }
 }

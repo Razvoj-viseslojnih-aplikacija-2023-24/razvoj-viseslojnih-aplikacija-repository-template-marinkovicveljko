@@ -24,7 +24,10 @@ export class KorisniciService {
   }
 
   public deleteKorisnik(id:number) : Observable<any> {
-    return this.httpClient.delete(`${KORISNICI_URL}/id/${id}`);
+    return this.httpClient.delete(`${KORISNICI_URL}/id/${id}`, {
+      responseType: 'text',
+    });
+
   }
 
 }

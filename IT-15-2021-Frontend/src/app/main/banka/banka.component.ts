@@ -35,7 +35,7 @@ export class BankaComponent implements OnInit, OnDestroy {
 
   public loadData() {
     this.subscription = this.bankaService.getAllBanks().subscribe(
-      data => {
+      (data) => {
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

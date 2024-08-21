@@ -31,7 +31,7 @@ export class BankaDialogComponent implements OnInit {
     }),
       (error: Error) => {
         console.log(error.name + ' ' + error.message);
-        this.snackBar.open('Doslo je do greske prilikom dodavanja artikla ', 'Zatvori', {
+        this.snackBar.open('Doslo je do greske prilikom dodavanja banke ', 'Zatvori', {
           duration: 2500
         })
       }
@@ -45,7 +45,7 @@ export class BankaDialogComponent implements OnInit {
     }),
       (error: Error) => {
         console.log(error.name + ' ' + error.message);
-        this.snackBar.open('Doslo je do greske prilikom azuriranja artikla ', 'Zatvori', {
+        this.snackBar.open('Doslo je do greske prilikom azuriranja banke ', 'Zatvori', {
           duration: 2500
         })
       }
@@ -53,13 +53,13 @@ export class BankaDialogComponent implements OnInit {
 
   public deleteBanka(): void {
     this.bankaService.deleteBanka(this.data.id).subscribe(() => {
-      this.snackBar.open("Uspesno obrisan artikl " + this.data.naziv, 'OK', {
+      this.snackBar.open("Uspesno obrisana banka " + this.data.naziv, 'OK', {
         duration: 2500
       })
     }),
       (error: Error) => {
         console.log(error.name + ' ' + error.message)
-        this.snackBar.open('Doslo je do greske prilikom brisanja artikla ', 'Zatvori', {
+        this.snackBar.open('Doslo je do greske prilikom brisanja banke ', 'Zatvori', {
           duration: 2500
         })
       }

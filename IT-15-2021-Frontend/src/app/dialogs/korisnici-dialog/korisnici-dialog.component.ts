@@ -26,7 +26,8 @@ export class KorisniciDialogComponent implements OnInit {
     this.korisniciService.addKorisnik(this.data).subscribe(()=> {
       this.snackBar.open("Uspesno dodat korisnik: " +this.data.ime + " " + this.data.prezime, 'OK', {
         duration: 2500
-      }),
+      })
+    },
       (error: Error)=>
       {
         console.log(error.name + ' ' + error.message);
@@ -34,14 +35,15 @@ export class KorisniciDialogComponent implements OnInit {
           duration: 2500
         })
       }
-    })
+    )
   }
 
   public updateKorisnik(): void {
     this.korisniciService.updateKorisnik(this.data.id, this.data).subscribe(()=> {
       this.snackBar.open("Uspesno izmenjen korisnik: " +this.data.ime + " " + this.data.prezime, 'OK', {
         duration: 2500
-      }),
+      })
+    },
       (error: Error)=>
       {
         console.log(error.name + ' ' + error.message);
@@ -49,14 +51,15 @@ export class KorisniciDialogComponent implements OnInit {
           duration: 2500
         })
       }
-    })
+    )
   }
 
   public deleteKorisnik(): void {
     this.korisniciService.deleteKorisnik(this.data.id).subscribe(()=> {
       this.snackBar.open("Uspesno obrisan korisnik: " +this.data.ime + " " + this.data.prezime, 'OK', {
         duration: 2500
-      }),
+      });
+    },
       (error: Error)=>
       {
         console.log(error.name + ' ' + error.message);
@@ -64,7 +67,7 @@ export class KorisniciDialogComponent implements OnInit {
           duration: 2500
         })
       }
-    })
+    )
   }
 
 

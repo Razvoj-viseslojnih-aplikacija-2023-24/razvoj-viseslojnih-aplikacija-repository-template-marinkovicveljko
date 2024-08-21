@@ -18,67 +18,69 @@ export class FilijalaDialogComponent implements OnInit {
 
 
   constructor(public snackBar: MatSnackBar,
-              public dialogRef: MatDialogRef<FilijalaDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: Filijala, 
-              public filijalaService: FilijalaService,
-              public bankaService: BankaService) {}
+    public dialogRef: MatDialogRef<FilijalaDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Filijala,
+    public filijalaService: FilijalaService,
+    public bankaService: BankaService) { }
 
-  
+
 
   ngOnInit(): void {
     this.bankaService.getAllBanks().subscribe(
-    (data) => {
-      this.banke= data;
-    })
+      (data) => {
+        this.banke = data;
+      })
   }
 
-  compareTo(a: any,b: any) {
+  compareTo(a: any, b: any) {
     return a.id == b.id
   }
 
-  public addFilijala() : void {
-    this.filijalaService.addFilijala(this.data).subscribe(()=> {
+  public addFilijala(): void {
+    this.filijalaService.addFilijala(this.data).subscribe(() => {
       this.snackBar.open("Uspesno dodata filijala sa adresom " + this.data.adresa, 'OK', {
         duration: 2500
       })
-    }),
-    (error: Error) => {
-      console.log(error.name + ' ' + error.message);
-      this.snackBar.open("Doslo je do greske prilikom dodavanja filijale ", 'Zatvori', {
-        duration: 2500
-      })
-    }
+    },
+      (error: Error) => {
+        console.log(error.name + ' ' + error.message);
+        this.snackBar.open("Doslo je do greske prilikom dodavanja filijale ", 'Zatvori', {
+          duration: 2500
+        })
+      }
+    )
   }
 
-  public updateFilijala() : void {
+  public updateFilijala(): void {
     this.filijalaService.updateFilijala(this.data.id, this.data).subscribe(() => {
       this.snackBar.open("Uspesno modifikovana filijala sa adresom " + this.data.adresa, 'OK', {
         duration: 2500
-    })
-  }),
-
-  (error: Error) => {
-    console.log(error.name + ' ' + error.message);
-    this.snackBar.open("Doslo je do greske prilikom modifikacije filijale ", 'Zatvori', {
-      duration: 2500
-    })
+      })
+    },
+      (error: Error) => {
+        console.log(error.name + ' ' + error.message);
+        this.snackBar.open("Doslo je do greske prilikom modifikacije filijale ", 'Zatvori', {
+          duration: 2500
+        })
+      }
+    )
   }
-}
-  public deleteFilijala() : void {
-    this.filijalaService.deleteFilijala(this.data.id).subscribe(()=> {
-      this.snackBar.open("Uspesno obrisana filijala sa adresom " + this.data.adresa , 'OK', {
+  public deleteFilijala(): void {
+    this.filijalaService.deleteFilijala(this.data.id).subscribe(() => {
+      this.snackBar.open("Uspesno obrisana filijala sa adresom " + this.data.adresa, 'OK', {
         duration: 2500
-    })
-  }),
-  (error: Error) => {
-    console.log(error.name + ' ' + error.message);
-    this.snackBar.open("Doslo je do greske prilikom modifikacije filijale ", 'Zatvori', {
-      duration: 2500
-    })
+      })
+    },
+      (error: Error) => {
+        console.log(error.name + ' ' + error.message);
+        this.snackBar.open("Doslo je do greske prilikom modifikacije filijale ", 'Zatvori', {
+          duration: 2500
+        })
+      }
+    )
   }
-}
 
-  public cancel() : void {
+  public cancel(): void {
     this.dialogRef.close();
     this.snackBar.open('Odustali ste', 'Zatvori', {
       duration: 1000

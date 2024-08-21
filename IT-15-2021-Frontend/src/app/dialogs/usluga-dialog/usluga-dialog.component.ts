@@ -49,7 +49,8 @@ public addUsluga(): void {
   this.uslugaService.addUsluga(this.data).subscribe(()=> {
     this.snackBar.open("Uspesno dodata usluga: " +this.data.naziv, 'OK', {
       duration: 2500
-    }),
+    })
+  },
     (error: Error)=>
     {
       console.log(error.name + ' ' + error.message);
@@ -57,14 +58,15 @@ public addUsluga(): void {
         duration: 2500
       })
     }
-  })
+  )
 }
 
 public updateUsluga(): void {
   this.uslugaService.updateUsluga(this.data.id, this.data).subscribe(()=> {
     this.snackBar.open("Uspesno izmenjena usluga: " +this.data.naziv, 'OK', {
       duration: 2500
-    }),
+    })
+  },
     (error: Error)=>
     {
       console.log(error.name + ' ' + error.message);
@@ -72,14 +74,15 @@ public updateUsluga(): void {
         duration: 2500
       })
     }
-  })
+  )
 }
 
 public deleteUsluga(): void {
   this.uslugaService.deleteUsluga(this.data.id).subscribe(()=> {
     this.snackBar.open("Uspesno obrisana usluga: " +this.data.naziv, 'OK', {
       duration: 2500
-    }),
+    })
+  },
     (error: Error)=>
     {
       console.log(error.name + ' ' + error.message);
@@ -87,7 +90,7 @@ public deleteUsluga(): void {
         duration: 2500
       })
     }
-  })
+  )
 }
 
 

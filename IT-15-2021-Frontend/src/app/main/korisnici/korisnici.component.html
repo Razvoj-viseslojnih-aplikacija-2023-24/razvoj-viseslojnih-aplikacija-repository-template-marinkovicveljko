@@ -4,7 +4,7 @@
   
   <div class="container mat-elavation-z8">
     <mat-form-field>
-      <input matInput placeholder="Pretraga banke" (keyup)="applyFilter($event)">
+      <input matInput placeholder="Pretraga korisnika" (keyup)="applyFilter($event)">
     </mat-form-field>
     <mat-table matSort [dataSource]="dataSource" class="mat-cell">
       <!--ID-->
@@ -12,17 +12,17 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
       </ng-container>
-      <!--Naziv-->
+      <!--Ime-->
       <ng-container matColumnDef="ime">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Ime korisnika</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.ime }}</mat-cell>
       </ng-container>
-      <!-- Kontakt -->
+      <!-- Prezime -->
       <ng-container matColumnDef="prezime">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Prezime korisnika</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.prezime }}</mat-cell>
       </ng-container>
-      <!-- Kontakt -->
+      <!-- Maticni broj -->
       <ng-container matColumnDef="maticniBroj">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Maticni broj</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.maticniBroj }}</mat-cell>

@@ -24,6 +24,8 @@ export class FilijalaService {
   }
 
   public deleteFilijala(id:number) : Observable<any> {
-      return this.httpClient.delete(`${FILIJALA_URL}/id/${id}`)
+      return this.httpClient.delete(`${FILIJALA_URL}/id/${id}`, {
+        responseType: 'text',
+      })
   }
 }

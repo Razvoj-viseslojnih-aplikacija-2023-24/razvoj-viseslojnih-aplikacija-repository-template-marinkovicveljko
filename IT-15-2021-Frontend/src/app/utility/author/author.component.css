@@ -1,7 +1,6 @@
-/* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #51e2f2; /* Baby roze pozadina */
+    background-color: #51e2f2;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,7 +9,6 @@ body {
     height: 100vh;
 }
 
-/* Container Styles */
 .container {
     background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -21,7 +19,6 @@ body {
     margin: 20px;
 }
 
-/* Title Styles */
 .title-wrapper {
     display: flex;
     align-items: center;
@@ -31,14 +28,13 @@ body {
 .title {
     flex-grow: 1;
     font-size: 24px;
-    color: #333333; /* Tamno siva boja */
+    color: #333333; 
 }
 
 .icon {
-    color:  #06384d; /* Svetlo roze boja */
+    color:  #06384d; 
 }
 
-/* Profile Styles */
 .profile-wrapper {
     display: flex;
     flex-direction: column;
@@ -54,20 +50,19 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Info Styles */
 .info-wrapper {
     text-align: center;
 }
 
 .name {
     font-size: 22px;
-    color: #333333; /* Tamno siva boja */
+    color: #333333;
     margin: 10px 0;
 }
 
 .bio, .contact, .birthdate, .university, .about-me {
     font-size: 16px;
-    color: #555555; /* Svetlija tamno siva boja */
+    color: #555555;
     margin: 5px 0;
     display: flex;
     align-items: center;
@@ -80,7 +75,7 @@ body {
 
 .about-me {
     margin-top: 15px;
-    text-align: justify; /* Poravnanje teksta */
+    text-align: justify;
 }
 
 .social {
@@ -93,5 +88,5 @@ body {
 
 .social .icon {
     margin-right: 5px;
-    color: #51e2f2; /* Nežno roze boja */
+    color: #51e2f2;
 }
